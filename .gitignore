@@ -1,0 +1,36 @@
+# ---- OS / Editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+
+# ---- .NET / C# ----
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo
+*.cache
+*.pdb
+
+# ---- EF / local DB runtime files ----
+*.db
+*.db-shm
+*.db-wal
+
+# ---- Angular / Node ----
+BikeShop.UI/node_modules/
+BikeShop.UI/dist/
+BikeShop.UI/.angular/
+BikeShop.UI/coverage/
+BikeShop.UI/.sass-cache/
+
+# ---- npm/yarn logs ----
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

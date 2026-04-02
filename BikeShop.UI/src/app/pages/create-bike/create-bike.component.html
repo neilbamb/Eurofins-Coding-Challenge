@@ -1,0 +1,47 @@
+<div class="container mt-3 mt-md-5">
+  <div class="jumbotron mb-3">
+    <h3>Add a New Bike</h3>
+  </div>
+
+  <form (ngSubmit)="submit()" #form="ngForm">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Manufacturer</label>
+        <input class="form-control" name="manufacturer" [(ngModel)]="model.manufacturer" required />
+      </div>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Model</label>
+        <input class="form-control" name="model" [(ngModel)]="model.model" required />
+      </div>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Category</label>
+        <input class="form-control" name="category" [(ngModel)]="model.category" required />
+      </div>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Price</label>
+        <input class="form-control" name="price" [(ngModel)]="model.price" required />
+      </div>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Colour</label>
+        <input class="form-control" name="colour" [(ngModel)]="model.colour" required />
+      </div>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <label class="form-label">Weight</label>
+        <input class="form-control" name="weight" [(ngModel)]="model.weight" required />
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label">Image URL</label>
+        <input class="form-control" name="img_url" [(ngModel)]="model.img_url" required />
+      </div>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      Create Bike
+    </button>
+  </form>
+</div>
+

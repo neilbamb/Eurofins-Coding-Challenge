@@ -1,0 +1,56 @@
+<div class="container mt-3 mt-md-5" *ngIf="bike; else loadingOrError">
+  <div class="jumbotron mb-3">
+    <h3>{{ bike.manufacturer }} {{ bike.model }}</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-5 col-md-6 mb-3">
+      <img class="img-fluid rounded" [src]="bike.img_url" [alt]="bike.manufacturer + ' ' + bike.model" />
+    </div>
+
+    <div class="col-lg-7 col-md-6">
+      <div class="card card-stats">
+        <div class="card-body">
+          <p class="mb-1"><b>Manufacturer:</b> {{ bike.manufacturer }}</p>
+          <p class="mb-1"><b>Model:</b> {{ bike.model }}</p>
+          <p class="mb-1"><b>Category:</b> {{ bike.category }}</p>
+          <p class="mb-1"><b>Colour:</b> {{ bike.colour }}</p>
+          <p class="mb-1"><b>Weight:</b> {{ bike.weight }}</p>
+          <p class="mb-0"><b>Price:</b> {{ bike.price }}</p>
+        </div>
+        <div class="card-footer d-flex align-items-center gap-2">
+          <button
+            *ngIf="!isFavourite"
+            type="button"
+            class="btn btn-orange"
+            (click)="addToFavourites()"
+          >
+            Add to favourites
+          </button>
+          <button
+            *ngIf="isFavourite"
+            type="button"
+            class="btn btn-danger"
+            (click)="removeFromFavourites()"
+          >
+            Remove from favourites
+          </button>
+
+          <a routerLink="/home" class="ms-auto">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingOrError>
+  <div class="container mt-3 mt-md-5">
+    <div *ngIf="error" class="alert alert-warning" role="alert">
+      {{ error }}
+    </div>
+    <div *ngIf="!error">
+      Loading...
+    </div>
+  </div>
+</ng-template>
+
